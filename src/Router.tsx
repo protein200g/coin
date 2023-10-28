@@ -16,7 +16,7 @@ import {
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: 'coin/',
     element: (
       <QueryClientProvider client={queryClient}>
         <App />

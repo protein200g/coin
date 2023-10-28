@@ -153,8 +153,8 @@ interface IPriceData {
 function Coin() {
   const { id } = useParams();
   const { state } = useLocation() as RouteState;
-  const priceMatch = useMatch('/:coinId/price');
-  const chartMatch = useMatch('/:coinId/chart');
+  const priceMatch = useMatch('/:id/price');
+  const chartMatch = useMatch('/:id/chart');
   const { isLoading: infoLoading, data: infos } =
     useQuery<IInfoData>({
       queryKey: ['info', id],
