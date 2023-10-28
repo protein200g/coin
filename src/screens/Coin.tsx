@@ -152,9 +152,10 @@ interface IPriceData {
 
 function Coin() {
   const { id } = useParams();
+  console.log(id);
   const { state } = useLocation() as RouteState;
-  const priceMatch = useMatch('/:id/price');
-  const chartMatch = useMatch('/:id/chart');
+  const priceMatch = useMatch(':id/price');
+  const chartMatch = useMatch(':id/chart');
   const { isLoading: infoLoading, data: infos } =
     useQuery<IInfoData>({
       queryKey: ['info', id],
@@ -191,7 +192,7 @@ function Coin() {
     <Container>
       <Header>
         <Title>
-          <Link to="/">&larr;home</Link>
+          <Link to="/coin">&larr;home</Link>
           {state?.name
             ? state.name
             : loading
@@ -234,10 +235,10 @@ function Coin() {
           </Overview>
           <Tabs>
             <Tab $isActive={chartMatch !== null}>
-              <Link to={`/${id}/chart`}>Chart</Link>
+              <Link to={`${id}/chart`}>Chart</Link>
             </Tab>
             <Tab $isActive={priceMatch !== null}>
-              <Link to={`/${id}/price`}>Price</Link>
+              <Link to={`${id}/price`}>Price</Link>
             </Tab>
           </Tabs>
           <Outlet context={{ coinId: id }} />

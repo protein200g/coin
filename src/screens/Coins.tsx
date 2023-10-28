@@ -98,7 +98,7 @@ function Coins() {
           {data?.slice(0, 50).map((coin) => (
             <Coin key={coin.id}>
               <Link
-                to={`coin/${coin.id}`}
+                to={`${coin.id}`}
                 state={{ name: coin.name }}
               >
                 <CoinWrapper>

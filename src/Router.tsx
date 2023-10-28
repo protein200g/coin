@@ -32,10 +32,10 @@ const router = createBrowserRouter([
         element: <Coin />,
         children: [
           {
-            path: 'chart',
+            path: ':id/chart',
             element: <Chart />,
           },
-          { path: 'price', element: <Price /> },
+          { path: ':id/price', element: <Price /> },
         ],
       },
       // {
